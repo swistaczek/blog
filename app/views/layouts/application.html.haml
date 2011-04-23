@@ -16,18 +16,23 @@
         = content_tag :div, msg, :id => "flash_#{name}"
       =link_to 'Strona Główna', root_path
       |
-      =link_to 'O nas', root_path
+      =link_to 'O nas', about_path
       |
-      =link_to 'Oferta', root_path
+      =link_to 'Oferta', offer_path
       |
-      =link_to 'Reklamacje', root_path
+      =link_to 'Reklamacje', claims_path
       |
-      =link_to 'Kontakt', root_path
+      =link_to 'Kontakt', contact_path
       -if current_user
         #user_nav
           =link_to 'Edytuj profil'
           |
           =link_to 'Wyloguj się', logout_path
+          %br
+          =image_tag("avatars/default.png")
+          =image_tag("avatars/default.png")
+          =image_tag("avatars/default.png")
+
       -else
         #user_nav
           =link_to 'Zaloguj się', login_path

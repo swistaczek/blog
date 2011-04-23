@@ -1,10 +1,22 @@
 Blog::Application.routes.draw do
 
-  root :to => "home#index"
+  # Strona Głowna / Home
+  root :to => "home#index" 
+  
+  # Konta / Accounts
   get "rejestracja" => "accounts#new", :as => "register"
   get "wyloguj" => "sessions#destroy", :as => "logout"
   get "zaloguj" => "sessions#new", :as => "login"
   
+  # Podstrony / Subsites
+  get "informacje/o-nas" => "home#about", :as => "about"
+  get "informacje/oferta" => "home#offer", :as => "offer"
+  get "informacje/reklamacje" => "home#claims", :as => "claims"
+  get "informacje/kontakt" => "home#contact", :as => "contact"
+
+
+
+  # Mapy adresów / Maps of adresses (resources)  
   resource :accounts
   resource :sessions
 
