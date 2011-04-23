@@ -25,14 +25,9 @@
       =link_to 'Kontakt', contact_path
       -if current_user
         #user_nav
-          =link_to 'Edytuj profil'
+          =link_to 'Edytuj profil', edit_path
           |
           =link_to 'Wyloguj się', logout_path
-          %br
-          =image_tag("avatars/default.png")
-          =image_tag("avatars/default.png")
-          =image_tag("avatars/default.png")
-
       -else
         #user_nav
           =link_to 'Zaloguj się', login_path

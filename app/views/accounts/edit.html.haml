@@ -1,0 +1,48 @@
+-title "Modyfikowanie ustawień konta"
+%h1 Edycja profilu
+%p
+  =link_to 'Kokpit główny'
+  |
+  =link_to 'Modyfikacja danych'
+  |
+  =link_to 'Moje zamówienia'
+  |
+  =link_to 'Zmiana hasła'
+  |
+  =link_to 'Zmiana avatara'
+%p
+  Zalogowany jako
+  =current_user.username + '.'
+%p{:align => "center"}
+  %div{:align => "center"}
+    %table#tabela{:summary => "Tabela testowa", :width => "100%"}
+      %tbody
+        %tr
+          %td.gora{:align => "center", :width => "50%"}
+            %font{:style => "font-size: 9pt"} Nazwa użytkownika
+          %td.gora{:align => "center", :width => "50%"}
+            %font{:style => "font-size: 9pt"}
+              =current_user.username
+        %tr
+          %td{:align => "center"}
+            %font{:style => "font-size: 9pt"} Adres e-mail
+          %td{:align => "center"}
+            %font{:style => "font-size: 9pt"}
+              =current_user.email
+        %tr
+          %td{:align => "center"}
+            %font{:style => "font-size: 9pt"} Ostatnia wizyta
+          %td{:align => "center"}
+            %font{:style => "font-size: 9pt"} 2 dni temu
+        %tr
+          %td{:align => "center"}
+            %font{:style => "font-size: 9pt"} Ilość logowań
+          %td{:align => "center"}
+            %font{:style => "font-size: 9pt"} 3
+        %tr
+          %td{:align => "center"}
+            %font{:style => "font-size: 9pt"} Data rejestracji
+          %td{:align => "center"}
+            %font{:style => "font-size: 9pt"}
+              =current_user.created_at.to_date
+
