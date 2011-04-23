@@ -4,7 +4,8 @@ Blog::Application.routes.draw do
   root :to => "home#index" 
   
   # Konta / Accounts
-  get "konto/edytuj" => "accounts#edit", :as => "edit"
+  get "konto" => "accounts#index", :as => "account"
+  get "konto/edytuj/:username" => "accounts#edit", :as => "edit"
   get "rejestracja" => "accounts#new", :as => "register"
   get "wyloguj" => "sessions#destroy", :as => "logout"
   get "zaloguj" => "sessions#new", :as => "login"

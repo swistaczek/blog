@@ -20,7 +20,6 @@ class AccountsController < ApplicationController
   def update
     @account = current_user
     if @account.update_attributes(params[:account])
-      flash[:notice] = "Successfully updated profile."
       redirect_to root_url
     else
       render :action => 'edit'
