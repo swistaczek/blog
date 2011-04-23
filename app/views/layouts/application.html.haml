@@ -15,6 +15,14 @@
       - flash.each do |name, msg|
         = content_tag :div, msg, :id => "flash_#{name}"
       =link_to 'Strona Główna', root_path
+      |
+      =link_to 'O nas', root_path
+      |
+      =link_to 'Oferta', root_path
+      |
+      =link_to 'Reklamacje', root_path
+      |
+      =link_to 'Kontakt', root_path
       -if current_user
         #user_nav
           =link_to 'Edytuj profil'

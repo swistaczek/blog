@@ -1,0 +1,20 @@
+%h1 Rejestracja
+= form_for @account do |f|
+  %p
+    Nazwa użytkownika
+    %br
+    = f.text_field :username
+    %br
+    Hasło
+    %br
+    = f.password_field :password
+    %br
+    Sprawdzenie poprawności hasła
+    %br
+    = f.password_field :password_confirmation
+    %br
+    = submit_tag "Następny krok >"
+%p
+  =link_to 'Pomoc online'
+  |
+  =link_to 'Rozmowa skype', 'skype://bangeusz/'
