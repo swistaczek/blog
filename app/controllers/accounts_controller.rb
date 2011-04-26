@@ -31,15 +31,20 @@ class AccountsController < ApplicationController
   end
 
   def edit
-    @account = current_user
+      @account = Account.find(session[:account_id])
   end
 
   def update
-    @account = current_user
-    if @account.update_attributes(params[:account])
-      redirect_to root_url
-    else
-      render :action => 'edit'
+    @account = Account.find(session[:account_id])
+
+    respond_to do |format|
+      if @account.update_attributes(params[:account])
+        format.html { redirect_to(@account, :notice => 'Category was successfully updated.') }
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @account.errors, :status => :unprocessable_entity }
+      end
     end
   end
 

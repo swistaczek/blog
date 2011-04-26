@@ -12,7 +12,7 @@ class Account < ActiveRecord::Base
 
   attr_writer :current_step
 
-  validates_presence_of :rules, :if => lambda { |o| o.current_step == "second" }
+  # validates_presence_of :rules, :if => lambda { |o| o.current_step == "second" }
 
   def current_step
     @current_step || steps.first

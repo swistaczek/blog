@@ -1,24 +1,22 @@
 Blog::Application.routes.draw do
 
   # Strona Głowna / Home
-  root :to => "home#index" 
-  
+  root :to => "home#index"
+
   # Konta / Accounts
   get "konto" => "accounts#index", :as => "account"
-  get "konto/edytuj/:username" => "accounts#edit", :as => "edit"
+  get "konto/edytuj" => "accounts#edit", :as => "edit"
   get "rejestracja" => "accounts#new", :as => "register"
   get "wyloguj" => "sessions#destroy", :as => "logout"
   get "zaloguj" => "sessions#new", :as => "login"
-  
+
   # Podstrony / Subsites
   get "informacje/o-nas" => "home#about", :as => "about"
   get "informacje/oferta" => "home#offer", :as => "offer"
   get "informacje/reklamacje" => "home#claims", :as => "claims"
   get "informacje/kontakt" => "home#contact", :as => "contact"
 
-
-
-  # Mapy adresów / Maps of adresses (resources)  
+  # Mapy adresów / Maps of adresses (resources)
   resource :accounts
   resource :sessions
 
@@ -79,3 +77,4 @@ Blog::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
 end
+
