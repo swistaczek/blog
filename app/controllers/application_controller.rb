@@ -11,7 +11,6 @@ class ApplicationController < ActionController::Base
 
   def log_in?
     if current_user
-
     else
       redirect_to root_path
     end
