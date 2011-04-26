@@ -1,6 +1,6 @@
 class AccountsController < ApplicationController
 
-  before_filter :log_in?, :only => [:edit, :update]
+  before_filter :log_in?, :only => [:edit, :update, :index]
 
   def new
     session[:account_params] ||= {}

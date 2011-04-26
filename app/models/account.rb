@@ -12,12 +12,12 @@ class Account < ActiveRecord::Base
 
   attr_writer :current_step
 
-  validates_presence_of :shipping_name, :if => lambda { |o| o.current_step == "shipping" }
-  validates_presence_of :billing_name, :if => lambda { |o| o.current_step == "billing" }
+  validates_presence_of :rules, :if => lambda { |o| o.current_step == "second" }
 
   def current_step
     @current_step || steps.first
   end
+
 
   def steps
     %w[first second last]
