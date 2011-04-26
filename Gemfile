@@ -5,10 +5,13 @@ gem 'rails', '3.0.7'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
 gem 'nifty-generators', '>= 0.4.0'
 gem 'haml'
 gem 'bcrypt-ruby', :require => 'bcrypt'
+
+group :development, :test do
+  gem 'sqlite3'
+end
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -33,3 +36,4 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 #   gem 'webrat'
 # end
 gem "mocha", :group => :test
+
