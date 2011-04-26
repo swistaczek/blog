@@ -1,19 +1,15 @@
-%h1 Rejestracja
+%h1
+  Rejestracja
+  (
+  =step?
+  \/
+  3
+  )
 = form_for @account do |f|
-  %p
-    Nazwa użytkownika
-    %br
-    = f.text_field :username
-    %br
-    Hasło
-    %br
-    = f.password_field :password
-    %br
-    Sprawdzenie poprawności hasła
-    %br
-    = f.password_field :password_confirmation
-    %br
-    = submit_tag "Następny krok >"
+  =f.error_messages
+  = render "#{@account.current_step}_step", :f => f
+  = f.submit "< Poprzedni krok", :name => "back_button" unless @account.first_step?
+  = f.submit "Następny krok >"
 %p
   =link_to 'Pomoc online'
   |

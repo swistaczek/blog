@@ -1,9 +1,10 @@
 class SessionsController < ApplicationController
+
   def new
   end
 
   def create
-    account = Account.authenticate(params[:accountname], params[:password])
+    account = Account.authenticate(params[:username], params[:password])
     if account
       session[:account_id] = account.id
       account.increment!(:login_count)
