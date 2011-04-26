@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(:version => 20110423123720) do
     t.string   "email"
     t.string   "password_hash"
     t.string   "password_salt"
+    t.integer  "login_count"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

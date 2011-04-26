@@ -5,6 +5,7 @@ class CreateAccounts < ActiveRecord::Migration
       t.string :email
       t.string :password_hash
       t.string :password_salt
+      t.integer :login_count
 
       t.timestamps
     end
@@ -14,3 +15,4 @@ class CreateAccounts < ActiveRecord::Migration
     drop_table :accounts
   end
 end
+
