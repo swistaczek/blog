@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       session[:account_id] = account.id
       redirect_to root_url
     else
-      flash.now.alert = "Invalid accountname or password"
+      flash.now.alert = "Niepoprawny login bądź hasło."
       render "new"
     end
   end
@@ -19,3 +19,4 @@ class SessionsController < ApplicationController
   end
 
 end
+
