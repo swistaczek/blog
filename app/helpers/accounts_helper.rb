@@ -1,7 +1,7 @@
 module AccountsHelper
 
   def step?
-    # Czy premium jest aktywne. Widoczne tylko dla zalogowanego.
+    # Określanie obecnego kroku
     case @account.current_step
       when 'first'
         '1'

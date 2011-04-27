@@ -10,6 +10,7 @@
   = render "#{@account.current_step}_step", :f => f
   = f.submit "< Poprzedni krok", :name => "back_button" unless @account.first_step?
   = f.submit "Następny krok >"
+
 %p
   =link_to 'Pomoc online'
   |
