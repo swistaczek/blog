@@ -31,11 +31,11 @@ class AccountsController < ApplicationController
   end
 
   def edit
-      @account = Account.find(session[:account_id])
+    @account = current_user
   end
 
   def update
-    @account = Account.find(session[:account_id])
+    @account = current_user
 
     respond_to do |format|
       if @account.update_attributes(params[:account])
