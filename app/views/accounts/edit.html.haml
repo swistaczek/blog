@@ -4,9 +4,12 @@
 %p
   Zalogowany jako
   =current_user.username + '.'
--form_for @account do |f|
+-form_for @account, :url => update_profile_path do |f|
   Obecne hasło
   %br
-  = f.text_field :username
+  = f.text_field :password
+  Potwierdzenie hasła
+  %br
+  = f.text_field :password_confirmation
   = f.submit "Gotowe"
 

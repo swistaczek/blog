@@ -4,8 +4,13 @@ Blog::Application.routes.draw do
   root :to => "home#index"
 
   # Konta / Accounts
-  match "konto" => "accounts#index", :as => "account"
-  match "konto/edytuj" => "accounts#edit", :as => "edit"
+  scope "/konto" do
+    put   "aktualizuj" => "accounts#update", :as => :update_profile
+    match "edytuj" => "accounts#edit", :as => :edit_profile
+    match "/" => "accounts#index", :as => :account
+  end
+
+
   match "rejestracja" => "accounts#new", :as => "register"
   match "wyloguj" => "sessions#destroy", :as => "logout"
   match "zaloguj" => "sessions#new", :as => "login"
