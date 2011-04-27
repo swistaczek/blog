@@ -1,7 +1,7 @@
 class AccountsController < ApplicationController
 
   before_filter :log_in?, :only => [:edit, :update, :index]
-  # :)
+
   def new
     session[:account_params] ||= {}
     @account = Account.new(session[:account_params])
@@ -31,20 +31,20 @@ class AccountsController < ApplicationController
   end
 
   def edit
-    @account = current_user { redirect_to update_path }
+    @account = current_user
   end
 
   def update
     @account = current_user
+
       if @account.update_attributes(params[:account])
-        debugger
         flash[:notice] = "Powodzenie"
-        redirect_to edit_path
+        redirect_to account_path
       else
         flash[:error] = 'Napotkano problem'
-        redirect_to edit_path
+        redirect_to account_path
       end
-  end
+    end
 
 end
 

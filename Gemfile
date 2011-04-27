@@ -10,7 +10,7 @@ gem 'haml'
 gem 'bcrypt-ruby', :require => 'bcrypt'
 
 group :development, :test do
-  gem 'ruby-debug19', :require => 'ruby-debug'
+  # gem 'ruby-debug19', :require => 'ruby-debug'
   gem 'sqlite3'
 end
 
