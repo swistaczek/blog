@@ -31,20 +31,20 @@ class AccountsController < ApplicationController
   end
 
   def edit
-    @account = current_user
+    @account = current_user { redirect_to update_path }
   end
 
   def update
     @account = current_user
-
       if @account.update_attributes(params[:account])
+        debugger
         flash[:notice] = "Powodzenie"
-        redirect_to account_path
+        redirect_to edit_path
       else
         flash[:error] = 'Napotkano problem'
-        redirect_to account_path
+        redirect_to edit_path
       end
-    end
+  end
 
 end
 

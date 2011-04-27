@@ -12,8 +12,6 @@
 
   %body
     #container
-      - flash.each do |name, msg|
-        = content_tag :div, msg, :id => "flash_#{name}"
       =link_to 'Strona Główna', root_path
       |
       =link_to 'O nas', about_path
@@ -33,7 +31,10 @@
           =link_to 'Zaloguj się', login_path
           |
           =link_to 'Zarejestruj się', register_path
+      - flash.each do |name, msg|
+        = content_tag :div, msg, :id => "flash_#{name}"
       = yield
       #footer
         Wszelkie kurwa prawa zastrzeżone.
       %br
+

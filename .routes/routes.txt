@@ -1,0 +1,23 @@
+(in /home/bangeusz/Dokumenty/RubyOnRails/blog)
+         root        /(.:format)                       {:controller=>"home", :action=>"index"}
+      account        /konto(.:format)                  {:action=>"index", :controller=>"accounts"}
+         edit        /konto/edytuj/:username(.:format) {:controller=>"accounts", :action=>"edit"}
+     register        /rejestracja(.:format)            {:action=>"new", :controller=>"accounts"}
+       logout        /wyloguj(.:format)                {:action=>"destroy", :controller=>"sessions"}
+        login        /zaloguj(.:format)                {:action=>"new", :controller=>"sessions"}
+        about        /informacje/o-nas(.:format)       {:controller=>"home", :action=>"about"}
+        offer        /informacje/oferta(.:format)      {:controller=>"home", :action=>"offer"}
+       claims        /informacje/reklamacje(.:format)  {:controller=>"home", :action=>"claims"}
+      contact        /informacje/kontakt(.:format)     {:controller=>"home", :action=>"contact"}
+     accounts POST   /accounts(.:format)               {:action=>"create", :controller=>"accounts"}
+ new_accounts GET    /accounts/new(.:format)           {:action=>"new", :controller=>"accounts"}
+edit_accounts GET    /accounts/edit(.:format)          {:action=>"edit", :controller=>"accounts"}
+              GET    /accounts(.:format)               {:action=>"show", :controller=>"accounts"}
+              PUT    /accounts(.:format)               {:action=>"update", :controller=>"accounts"}
+              DELETE /accounts(.:format)               {:action=>"destroy", :controller=>"accounts"}
+     sessions POST   /sessions(.:format)               {:action=>"create", :controller=>"sessions"}
+ new_sessions GET    /sessions/new(.:format)           {:action=>"new", :controller=>"sessions"}
+edit_sessions GET    /sessions/edit(.:format)          {:action=>"edit", :controller=>"sessions"}
+              GET    /sessions(.:format)               {:action=>"show", :controller=>"sessions"}
+              PUT    /sessions(.:format)               {:action=>"update", :controller=>"sessions"}
+              DELETE /sessions(.:format)               {:action=>"destroy", :controller=>"sessions"}

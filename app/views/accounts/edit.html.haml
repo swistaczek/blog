@@ -7,15 +7,6 @@
 -form_for @account do |f|
   Obecne hasło
   %br
-  = f.password_field :password
-  %br
-  Nowe hasło
-  %br
-  = f.password_field :password
-  %br
-  Powtórz nowe hasło
-  %br
-  = f.password_field :password
-  %br
+  = f.text_field :username
   = f.submit "Gotowe"
 
