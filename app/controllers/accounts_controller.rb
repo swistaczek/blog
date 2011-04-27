@@ -37,16 +37,14 @@ class AccountsController < ApplicationController
   def update
     @account = current_user
 
-    respond_to do |format|
       if @account.update_attributes(params[:account])
-        format.html { redirect_to(@account, :notice => 'Category was successfully updated.') }
-        format.xml  { head :ok }
+        flash[:notice] = "Powodzenie"
+        redirect_to account_path
       else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @account.errors, :status => :unprocessable_entity }
+        flash[:error] = 'Napotkano problem'
+        redirect_to account_path
       end
     end
-  end
 
 end
 

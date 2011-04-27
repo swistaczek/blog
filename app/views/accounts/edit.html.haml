@@ -5,7 +5,17 @@
   Zalogowany jako
   =current_user.username + '.'
 -form_for @account do |f|
-  = f.text_field :password
+  Obecne hasło
   %br
-  = f.submit "Zmieniaj"
+  = f.password_field :password
+  %br
+  Nowe hasło
+  %br
+  = f.password_field :password
+  %br
+  Powtórz nowe hasło
+  %br
+  = f.password_field :password
+  %br
+  = f.submit "Gotowe"
 
