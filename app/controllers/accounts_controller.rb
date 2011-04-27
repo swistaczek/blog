@@ -41,7 +41,7 @@ class AccountsController < ApplicationController
         flash[:notice] = "Powodzenie"
         redirect_to account_path
       else
-        flash[:error] = 'Napotkano problem'
+        flash[:error] = "Napotkano problem #{@account.errors.inspect}"
         redirect_to account_path
       end
     end
